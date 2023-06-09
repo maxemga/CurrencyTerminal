@@ -1,0 +1,14 @@
+.home_card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  border-radius: var(--home-border);
+  box-shadow: var(--shadow);
+  width: var(--home-width);
+}
+
+.title {
+  font: var(--font-l);
+  color: var(--violet);
+}

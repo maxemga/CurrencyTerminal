@@ -1,4 +1,4 @@
 export enum ApiMethods {
-  DIRECTIONS = "auth/me",
-  FILTERS = "",
+  DIRECTIONS = "directions.json",
+  FILTER = "filter.json",
 }

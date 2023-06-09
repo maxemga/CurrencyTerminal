@@ -1,0 +1,24 @@
+@mixin toggle {
+  background-color: var(--violet);
+  color: var(--inverted-color);
+}
+
+.switcher {
+  display: flex;
+  margin: 10px 0;
+  gap: 5px;
+}
+
+.item {
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--violet);
+    color: var(--inverted-color);
+  }
+  &.active {
+    @include toggle;
+  }
+}

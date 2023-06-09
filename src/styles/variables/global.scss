@@ -1,0 +1,19 @@
+:root {
+  --font-family-300: "Noto-Light";
+  --font-family-400: "Noto-Regular";
+  --font-family-500: "Noto-Medium";
+  --font-family-700: "Noto-Bold";
+
+  --font-size-m: 14px;
+  --font-m: var(--font-size-m) var(--font-family-400);
+
+  --font-size-l: 16px;
+  --font-l: var(--font-size-l) var(--font-family-500);
+
+  --shadow: 0px 0px 10px 2px rgba(34, 60, 80, 0.2);
+
+  // Sizes
+  --home-border: 16px;
+  --home-width: 500px;
+  --field-height: 50px;
+}

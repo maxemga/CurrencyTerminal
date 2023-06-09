@@ -1,0 +1,15 @@
+@import "./reset";
+@import "./themes/light";
+@import "./variables/global";
+@import "./fonts";
+@import "./colors";
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: var(--font-m);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
