@@ -1,6 +1,7 @@
 .app.light {
-  --primary-color: black;
-  --inverted-color: white;
-  --bg-color: white;
+  --primary-color: var(--black);
+  --inverted-color: var(--white);
+  --bg-color: var(--white);
+  --card-color: var(--white);
   --field-border: var(--silver);
 }

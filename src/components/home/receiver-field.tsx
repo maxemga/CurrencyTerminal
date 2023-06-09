@@ -1,4 +1,4 @@
-import Select, { components } from "react-select";
+import Select, { components, CSSObjectWithLabel } from "react-select";
 import { Currency, Sources, Statuses } from "src/enums";
 import { FieldProps } from "src/types";
 import { CurrencyModel } from "src/utils";
@@ -14,29 +14,36 @@ export const HomeField = ({ obj, source }: Props) => {
     !!CurrencyModel[obj[source].value?.code as Currency] &&
     CurrencyModel[obj[source].value?.code as Currency].icon;
 
+  const styles = {
+    control: (baseStyles: CSSObjectWithLabel) => ({
+      ...baseStyles,
+      paddingLeft: "10px",
+      height: "50px",
+      cursor: "pointer",
+    }),
+    option: (styles: CSSObjectWithLabel) => ({
+      ...styles,
+      color: "black",
+      cursor: "pointer",
+    }),
+  };
+
+  const Control = ({ children, ...props }: any) => (
+    <components.Control {...props}>
+      {icon}
+      {children}
+    </components.Control>
+  );
+
   return (
     <Select
-      components={{
-        Control: ({ children, ...props }) => (
-          <components.Control {...props}>
-            {icon}
-            {children}
-          </components.Control>
-        ),
-      }}
+      components={{ Control }}
       value={obj[source].value}
       getOptionLabel={(option) => option.name}
       getOptionValue={(option) => option.name}
       onChange={obj[source].onChange}
       isLoading={isLoading}
-      styles={{
-        control: (baseStyles) => ({
-          ...baseStyles,
-          paddingLeft: "10px",
-          height: "50px",
-          cursor: "pointer",
-        }),
-      }}
+      styles={styles}
       isSearchable={false}
       options={obj[source].data}
     />
