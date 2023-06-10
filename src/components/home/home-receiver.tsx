@@ -16,6 +16,8 @@ export const HomeReceiver = ({ source }: Props) => {
   const [categoryDirection, setCategoryDirection] = useState(Switchers.ALL);
   const [categoryFilter, setCategoryFilter] = useState(Switchers.ALL);
 
+  console.log("1");
+
   const { filter, directions, currentDirection, currentFilter } =
     useAppSelector(selectDirection);
   const dispatch = useAppDispatch();
@@ -50,9 +52,9 @@ export const HomeReceiver = ({ source }: Props) => {
       currentFilter,
       directions.data,
       directions.status,
-      dispatch,
       filter.data,
       filter.status,
+      dispatch,
     ]
   );
 
@@ -63,11 +65,11 @@ export const HomeReceiver = ({ source }: Props) => {
   useEffect(() => {
     dispatch(setDirection(null));
     dispatch(setFilter(null));
-  }, [categoryDirection, dispatch]);
+  }, [categoryDirection]);
 
   useEffect(() => {
     dispatch(setFilter(null));
-  }, [categoryFilter, dispatch]);
+  }, [categoryFilter]);
 
   return (
     <div>
