@@ -8,6 +8,7 @@ import { useEffect, useMemo, useState } from "react";
 import { FieldProps } from "src/types";
 import cn from "classnames";
 import cls from "./home.module.scss";
+
 interface Props {
   source: Sources;
 }
@@ -15,8 +16,6 @@ interface Props {
 export const HomeReceiver = ({ source }: Props) => {
   const [categoryDirection, setCategoryDirection] = useState(Switchers.ALL);
   const [categoryFilter, setCategoryFilter] = useState(Switchers.ALL);
-
-  console.log("1");
 
   const { filter, directions, currentDirection, currentFilter } =
     useAppSelector(selectDirection);
