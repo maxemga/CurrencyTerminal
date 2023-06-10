@@ -1,14 +1,13 @@
-import cn from "classnames";
-import cls from "./home.module.scss";
 import { HomeField } from "./receiver-field";
 import { HomeSwitcher } from "./switcher";
 import { Sources, Switchers } from "src/enums";
 import { useAppDispatch, useAppSelector } from "src/hooks";
 import { selectDirection, setDirection, setFilter } from "src/store";
-import { filterSwitchers } from "src/utils";
+import { filterByCode, filterSwitchers, findByCode } from "src/utils";
 import { useEffect, useMemo, useState } from "react";
 import { FieldProps } from "src/types";
-
+import cn from "classnames";
+import cls from "./home.module.scss";
 interface Props {
   source: Sources;
 }
@@ -25,11 +24,7 @@ export const HomeReceiver = ({ source }: Props) => {
     () => ({
       [Sources.DIRECTION]: {
         title: "Отдаете",
-        data: directions.data.filter((el) =>
-          filterSwitchers[categoryDirection].values.length !== 0
-            ? filterSwitchers[categoryDirection].values.includes(el.code)
-            : el
-        ),
+        data: filterByCode(directions.data, categoryDirection),
         value: currentDirection,
         status: directions.status,
         switchers: filterSwitchers,
@@ -41,13 +36,7 @@ export const HomeReceiver = ({ source }: Props) => {
       },
       [Sources.FILTER]: {
         title: "Получаете",
-        data: filter.data
-          .find((el) => el.from.code === currentDirection?.code)
-          ?.to.filter((el) =>
-            filterSwitchers[categoryFilter].values.length !== 0
-              ? filterSwitchers[categoryFilter].values.includes(el.code)
-              : el
-          ),
+        data: findByCode(filter.data, currentDirection, categoryFilter),
         value: currentFilter,
         status: filter.status,
         switchers: filterSwitchers,

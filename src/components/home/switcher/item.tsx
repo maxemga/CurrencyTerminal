@@ -1,7 +1,7 @@
-import cn from "classnames";
 import { Sources, Switchers } from "src/enums";
 import { FieldProps } from "src/types";
 import cls from "./switcher.module.scss";
+import cn from "classnames";
 
 interface Props {
   obj: FieldProps;

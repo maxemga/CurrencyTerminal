@@ -1,6 +1,6 @@
+import { useTheme } from "src/context";
 import cls from "./theme-toggler.module.scss";
 import cn from "classnames";
-import { useTheme } from "src/context";
 
 export const ThemeToggler = () => {
   const { theme, toggleTheme } = useTheme();
