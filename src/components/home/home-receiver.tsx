@@ -30,9 +30,7 @@ export const HomeReceiver = ({ source }: Props) => {
         switchers: filterSwitchers,
         category: categoryDirection,
         setCategory: setCategoryDirection,
-        onChange: (e) => {
-          dispatch(setDirection(e));
-        },
+        onChange: (e) => dispatch(setDirection(e)),
       },
       [Sources.FILTER]: {
         title: "Получаете",
@@ -42,9 +40,7 @@ export const HomeReceiver = ({ source }: Props) => {
         switchers: filterSwitchers,
         category: categoryFilter,
         setCategory: setCategoryFilter,
-        onChange: (e) => {
-          dispatch(setFilter(e));
-        },
+        onChange: (e) => dispatch(setFilter(e)),
       },
     }),
     [
