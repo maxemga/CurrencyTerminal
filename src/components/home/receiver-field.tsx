@@ -9,10 +9,12 @@ interface Props {
 }
 
 export const HomeField = ({ obj, source }: Props) => {
-  const isLoading = obj[source].status === Statuses.LOADING;
-  const icon =
-    !!CurrencyModel[obj[source].value?.code as Currency] &&
-    CurrencyModel[obj[source].value?.code as Currency].icon;
+  const { value, onChange, data, status } = obj[source];
+
+  const isLoading = status === Statuses.LOADING;
+  const currencyCode = value?.code as Currency;
+  const currencyModel = CurrencyModel[currencyCode];
+  const icon = !!currencyModel && currencyModel.icon;
 
   const styles = {
     control: (baseStyles: CSSObjectWithLabel) => ({
@@ -38,14 +40,14 @@ export const HomeField = ({ obj, source }: Props) => {
   return (
     <Select
       components={{ Control }}
-      value={obj[source].value}
+      value={value}
       getOptionLabel={(option) => option.name}
       getOptionValue={(option) => option.name}
-      onChange={obj[source].onChange}
+      onChange={onChange}
       isLoading={isLoading}
       styles={styles}
       isSearchable={false}
-      options={obj[source].data}
+      options={data}
     />
   );
 };
