@@ -17,7 +17,6 @@
 }
 
 .title {
-  font: var(--font-l);
   color: var(--violet);
 }
 
@@ -32,6 +31,7 @@
   padding: 15px 50px;
   border-radius: 3px;
   appearance: none;
+  font: var(--font-l);
 }
 
 .arrow {
@@ -42,6 +42,7 @@
 .placeholder {
   @include position();
   color: var(--black);
+  font: var(--font-l);
 }
 
 .picture {

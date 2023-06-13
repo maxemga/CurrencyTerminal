@@ -2,7 +2,7 @@ import { Currency, Sources, Statuses } from "src/enums";
 import type { FieldProps } from "src/types";
 import { CurrencyModel } from "src/utils";
 import { HomeFieldList } from "./receiver-list";
-import { ArrowIcon } from "src/assets";
+import { ArrowIcon, CurrencyIcon } from "src/assets";
 import cls from "./home.module.scss";
 import cn from "classnames";
 
@@ -18,7 +18,7 @@ export const HomeField = ({ obj, source }: Props) => {
   const isEmpty = !data?.length;
   const currencyCode = value?.code as Currency;
   const currencyModel = CurrencyModel[currencyCode];
-  const icon = !!currencyModel && currencyModel.icon;
+  const icon = !!currencyModel ? currencyModel.icon : <CurrencyIcon />;
 
   return (
     <div className={cn(cls.select)}>
@@ -30,7 +30,7 @@ export const HomeField = ({ obj, source }: Props) => {
       >
         <HomeFieldList directions={data} />
       </select>
-      <div className={cn(cls.picture)}>{icon}</div>
+      {!isEmpty && <div className={cn(cls.picture)}>{icon}</div>}
       {isLoading && <span className={cn(cls.loading)}>Loading...</span>}
       {isEmpty && <span className={cn(cls.placeholder)}>Список пуст</span>}
       {!isEmpty && (
