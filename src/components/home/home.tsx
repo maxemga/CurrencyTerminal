@@ -1,6 +1,6 @@
 import { HomeReceiver } from "./home-receiver";
-import { Sources } from "src/enums";
 import { ThemeToggler } from "../theme-toggler";
+import { Sources } from "src/enums";
 import cls from "./home.module.scss";
 import cn from "classnames";
 

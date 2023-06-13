@@ -1,5 +1,5 @@
 import { Switchers } from "src/enums";
-import { Direction, Filter } from "src/types";
+import type { Direction, Filter } from "src/types";
 import { filterSwitchers } from "./constants";
 
 export const findByCode = (

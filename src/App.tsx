@@ -1,6 +1,6 @@
 import { store } from "./store";
 import { Provider } from "react-redux";
-import { HomeScreen } from "./screens";
+import { HomeScreen } from "./pages";
 import { useTheme } from "./context";
 import cn from "classnames";
 import "./styles/index.scss";

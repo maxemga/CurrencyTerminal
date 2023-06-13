@@ -1,3 +1,10 @@
+@mixin position($left: 15px, $transform: translateY(-50%)) {
+  position: absolute;
+  top: 50%;
+  left: $left;
+  transform: $transform;
+}
+
 .home_card {
   display: flex;
   flex-direction: column;
@@ -12,4 +19,36 @@
 .title {
   font: var(--font-l);
   color: var(--violet);
+}
+
+.select {
+  position: relative;
+}
+
+.select_field {
+  cursor: pointer;
+  border: 1px solid var(--field-border);
+  width: 100%;
+  padding: 15px 50px;
+  border-radius: 3px;
+  appearance: none;
+}
+
+.arrow {
+  @include position(auto);
+  right: 15px;
+}
+
+.placeholder {
+  @include position();
+  color: var(--black);
+}
+
+.picture {
+  @include position();
+}
+
+.loading {
+  @include position(50%, translate(-50%, -50%));
+  color: var(--grey);
 }

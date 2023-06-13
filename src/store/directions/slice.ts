@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Statuses } from "src/enums";
-import { Direction, Filter } from "src/types";
+import type { Direction, Filter } from "src/types";
 import { getDirections, getFilter } from "./actions";
 
 interface State {

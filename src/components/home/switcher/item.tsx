@@ -1,5 +1,5 @@
 import { Sources, Switchers } from "src/enums";
-import { FieldProps } from "src/types";
+import type { FieldProps } from "src/types";
 import cls from "./switcher.module.scss";
 import cn from "classnames";
 

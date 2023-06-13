@@ -1,5 +1,5 @@
 import { Switchers } from "src/enums";
-import { Direction } from "src/types";
+import type { Direction } from "src/types";
 import { filterSwitchers } from "./constants";
 
 export const filterByCode = (arr: Direction[], category: Switchers) =>
